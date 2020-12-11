@@ -1,3 +1,5 @@
+declare let window: any;
+
 export const browser =
   'mozGetUserMedia' in navigator
     ? 'firefox'

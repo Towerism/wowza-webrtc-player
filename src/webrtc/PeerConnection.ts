@@ -1,5 +1,7 @@
 import { EventEmitter } from 'events';
 
+declare let window: any;
+
 const RTCPeerConnectionAPI =
     window.RTCPeerConnection /* ||
   window.mozRTCPeerConnection ||
