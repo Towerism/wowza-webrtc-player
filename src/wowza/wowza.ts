@@ -126,7 +126,7 @@ export class Wowza {
     }
 
     // Consume sessionId
-    if (data.streamInfo?.sessionId) {
+    if (data.streamInfo && data.streamInfo.sessionId) {
       this.streamInfo.sessionId = data.streamInfo.sessionId;
     }
 

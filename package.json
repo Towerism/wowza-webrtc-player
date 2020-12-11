@@ -1,5 +1,5 @@
 {
-  "name": "wowza-webrtc-player",
+  "name": "@towerism/wowza-webrtc-player",
   "version": "0.0.7",
   "description": "A generic player to handle Wowza WebRTC api",
   "author": "Vincent Thibault <vthibault.mobile@gmail.com>",
