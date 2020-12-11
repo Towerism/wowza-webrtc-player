@@ -20,12 +20,13 @@ const bannerPlugin = {
  */`,
 };
 
-const exportFormat = format => ({
+const exportFormat = (format) => ({
   input: 'src/webrtc-wowza-player.ts',
   output: {
     name: 'wowza-webrtc-player',
     format,
     file: `dist/${format}/wowza-webrtc-player.js`,
+    sourcemap: 'inline',
   },
   plugins: [
     builtins(),
@@ -45,7 +46,7 @@ const exportFormat = format => ({
       output: { comments: /@license/ },
     }),
     sizeSnapshot(),
-  ].filter(v => v),
+  ].filter((v) => v),
 });
 
 export default ['umd', 'cjs', 'esm'].map(exportFormat);
