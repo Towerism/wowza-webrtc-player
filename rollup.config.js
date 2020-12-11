@@ -23,7 +23,7 @@ const bannerPlugin = {
 const exportFormat = format => ({
   input: 'src/webrtc-wowza-player.ts',
   output: {
-    name,
+    name: 'wowza-webrtc-player',
     format,
     file: `dist/${format}/wowza-webrtc-player.js`,
   },
