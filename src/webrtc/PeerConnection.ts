@@ -3,19 +3,19 @@ import { EventEmitter } from 'events';
 declare let window: any;
 
 const RTCPeerConnectionAPI =
-    window.RTCPeerConnection /* ||
+  window.RTCPeerConnection; /* ||
   window.mozRTCPeerConnection ||
-  window.webkitRTCPeerConnection*/;
+  window.webkitRTCPeerConnection*/
 
 const RTCIceCandidateAPI =
-    window.RTCIceCandidate /* ||
+  window.RTCIceCandidate; /* ||
   window.mozRTCIceCandidate ||
-  window.webkitRTCIceCandidate*/;
+  window.webkitRTCIceCandidate*/
 
 const RTCSessionDescriptionAPI =
-    window.RTCSessionDescription /* ||
+  window.RTCSessionDescription; /* ||
   window.mozRTCSessionDescription ||
-  window.webkitRTCSessionDescription*/;
+  window.webkitRTCSessionDescription*/
 
 export class PeerConnection extends EventEmitter {
   private pc: RTCPeerConnection;
@@ -75,7 +75,7 @@ export class PeerConnection extends EventEmitter {
 
   public attachMediaStream(mediaStream: MediaStream): void {
     if (mediaStream.getTracks) {
-      mediaStream.getTracks().forEach(track => {
+      mediaStream.getTracks().forEach((track) => {
         this.pc.addTrack(track, mediaStream);
       });
     } else if ('addStream' in this.pc) {
@@ -90,7 +90,7 @@ export class PeerConnection extends EventEmitter {
   }
 
   private handleTrackEvent(event: RTCTrackEvent): void {
-    event.streams.forEach(stream => {
+    event.streams.forEach((stream) => {
       this.emit('addstream', stream);
     });
   }

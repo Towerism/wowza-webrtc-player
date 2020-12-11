@@ -20,6 +20,31 @@ const bannerPlugin = {
  */`,
 };
 
+const plugins = [
+  builtins(),
+  resolve({
+    extensions: ['.ts'],
+  }),
+  babel({
+    extensions: ['ts'],
+    exclude: 'node_modules/**',
+  }),
+  bannerPlugin,
+  sizeSnapshot(),
+];
+
+if (process.env.NODE_ENV !== 'development') {
+  plugins.push(
+    terser({
+      toplevel: true,
+      compress: {
+        unsafe: true,
+      },
+      output: { comments: /@license/ },
+    })
+  );
+}
+
 const exportFormat = (format) => ({
   input: 'src/webrtc-wowza-player.ts',
   output: {
@@ -28,25 +53,7 @@ const exportFormat = (format) => ({
     file: `dist/${format}/wowza-webrtc-player.js`,
     sourcemap: 'inline',
   },
-  plugins: [
-    builtins(),
-    resolve({
-      extensions: ['.ts'],
-    }),
-    babel({
-      extensions: ['ts'],
-      exclude: 'node_modules/**',
-    }),
-    bannerPlugin,
-    terser({
-      toplevel: true,
-      compress: {
-        unsafe: true,
-      },
-      output: { comments: /@license/ },
-    }),
-    sizeSnapshot(),
-  ].filter((v) => v),
+  plugins: plugins.filter((v) => v),
 });
 
 export default ['umd', 'cjs', 'esm'].map(exportFormat);
