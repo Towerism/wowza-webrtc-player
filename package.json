@@ -16,9 +16,9 @@
     "typings/"
   ],
   "bugs": {
-    "url": "https://github.com/koala-interactive/wowza-webrtc-player/issues"
+    "url": "https://github.com/towerism/wowza-webrtc-player/issues"
   },
-  "repository": "github:koala-interactive/wowza-webrtc-player",
+  "repository": "github:towerism/wowza-webrtc-player",
   "scripts": {
     "lint": "tsc --noEmit && eslint . --ext .ts",
     "build": "rimraf dist && npm run update-license && rollup -c && npm run update-filesize",
