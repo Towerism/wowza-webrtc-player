@@ -5,17 +5,23 @@ Easy to use **WebRTC** Player library to connect to **Wowza Media Server**.
 [![license: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 ![lint](https://github.com/koala-interactive/wowza-webrtc-player/workflows/lint/badge.svg?branch=master)
 
+Forked from [koala-interactive/wowza-webrtc-player](https://github.com/koala-interactive/wowza-webrtc-player)
+
+**Why was this forked? Will it be merged upstream**
+
+For the purposes of the organization I work for, we forked the upstream repo because it did not support our version of typescript. Additionally, the upstream repo did not support other browsers besides chrome that well for our purposes. Anyone is free at anytime to take patches from this repo and use them to create patches for upstream. However, at the moment we have no intention of merging anything upstream.
+
 ---
 
 ## 🚀 Installation
 
 Install with [yarn](https://yarnpkg.com):
 
-    $ yarn add wowza-webrtc-player
+    $ yarn add @towerism/wowza-webrtc-player
 
 Or install using [npm](https://npmjs.org):
 
-    $ npm i wowza-webrtc-player
+    $ npm i @towerism/wowza-webrtc-player
 
 ---
 
